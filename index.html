@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter App</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            margin: 10px 150px;
+        }
+        body{
+            background-color: rgb(6, 2, 43);
+        }
+        .card{
+            background-color: rgb(16, 92, 159);
+            padding: 60px 60px 60px 70px;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgb(236, 237, 238);
+            position: absolute;
+            top: 100px;
+            left: 250px;
+        }
+        button{
+            padding: 0 20px;
+            border-radius: 20px;
+            background-color: blue;
+            color: white;
+        }
+        h1{
+            padding: 0 0 0 15px;
+            color: white;
+            text-shadow: 0 0 5px black;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <button class="btn" onclick="counter(0)">+</button>
+        <h1 id="num">0</h1>
+        <button class="btn" disabled=true onclick="counter(1)">-</button>
+    </div>
+
+    <script>
+        var count= 0;
+        var num= document.getElementById("num");
+        var btn= document.getElementsByClassName("btn");
+
+        function counter(flag){
+            if(flag==0){
+                count++;
+                num.innerHTML= count;
+                btn[1].disabled=false;
+            }
+            else if(flag==1){
+                if(count==0){
+                    return
+                }
+                    count--;
+                    num.innerHTML= count;
+                
+            }
+        }
+    </script>
+</body>
+</html>
